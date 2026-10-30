@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The little corner of the internet belonging to Afla Aqila Hulwah.">
+  <title>Afla Aqila Hulwah Hendri ✿ little portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #FE9EC7;
+      --yellow: #F9F6C4;
+      --sky: #89D4FF;
+      --blue: #44ACFF;
+      --ink: #322d39;
+      --muted: #716a79;
+      --paper: #fffdfb;
+      --white: #fff;
+      --line: #f0e7ed;
+      --shadow: 0 12px 30px rgba(88,64,89,.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,253,251,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #f5eaf0;
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .brand span {
+      color: #ee6fa7;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: .88rem;
+      font-weight: 700;
+      color: #645c69;
+    }
+
+    .links a:hover {
+      color: #e768a1;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 74px 0 88px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow, .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: var(--yellow);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.04;
+      letter-spacing: -.055em;
+      margin: 19px 0;
+    }
+
+    .hero h1 em {
+      font-weight: 600;
+      color: #e96fa6;
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 27px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 19px;
+      border-radius: 15px;
+      font-weight: 800;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .primary {
+      background: var(--pink);
+    }
+
+    .secondary {
+      background: var(--sky);
+    }
+
+    .hero-art {
+      min-height: 380px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      border-radius: 42px 42px 42px 15px;
+      background: linear-gradient(140deg, #ffd4e5, var(--yellow) 52%, #c9edff);
+      box-shadow: var(--shadow);
+      transform: rotate(1deg);
+      padding: 25px;
+    }
+
+    .photo-frame {
+      width: min(285px, 85%);
+      height: 310px;
+      background: white;
+      padding: 10px 10px 38px;
+      border-radius: 7px;
+      box-shadow: 0 12px 30px #987b9233;
+      transform: rotate(-4deg);
+      z-index: 1;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    .photo-placeholder {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ffdce9, #d6f1ff);
+      font-size: 4rem;
+    }
+
+    .sticker {
+      position: absolute;
+      z-index: 2;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 14px;
+      font-size: .88rem;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .sticker.one {
+      top: 28px;
+      left: 0;
+      transform: rotate(-8deg);
+    }
+
+    .sticker.two {
+      right: 0;
+      bottom: 38px;
+      transform: rotate(6deg);
+      background: var(--yellow);
+    }
+
+    .spark {
+      position: absolute;
+      font-size: 2rem;
+      color: #fff;
+      filter: drop-shadow(0 2px 1px #d38cac);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 74px 0;
+    }
+
+    .tint-pink {
+      background: #fff4f8;
+    }
+
+    .tint-blue {
+      background: #f1faff;
+    }
+
+    .tint-yellow {
+      background: #fffef0;
+    }
+
+    .section-head {
+      max-width: 690px;
+      margin-bottom: 30px;
+    }
+
+    .kicker {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #dc6b9d;
+    }
+
+    .section-head h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      margin: 8px 0 10px;
+      letter-spacing: -.035em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 25px;
+    }
+
+    .about-note, .info-card, .skill-card,
+    .fav-card, .achievement-card, .contact-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-note {
+      background: var(--yellow);
+      border: 0;
+      transform: rotate(-1deg);
+    }
+
+    .about-note h3, .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      margin: 0 0 10px;
+    }
+
+    .about-note p {
+      margin: 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .info-card {
+      padding: 17px;
+      border-radius: 18px;
+      box-shadow: none;
+    }
+
+    .info-card small {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .info-card strong {
+      overflow-wrap: anywhere;
+      font-size: .95rem;
+    }
+
+    .info-card.wide {
+      grid-column: 1 / -1;
+    }
+
+    /* SKILLS */
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .skill-card {
+      box-shadow: none;
+      transition: transform .2s;
+    }
+
+    .skill-card:hover,
+    .fav-card:hover,
+    .achievement-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      font-size: 1.4rem;
+      background: var(--yellow);
+      margin-bottom: 12px;
+    }
+
+    .skill-card:nth-child(2) .skill-icon {
+      background: #ffe0ed;
+    }
+
+    .skill-card:nth-child(3) .skill-icon {
+      background: #d9f2ff;
+    }
+
+    .skill-card h3 {
+      margin: 0 0 5px;
+    }
+
+    .skill-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    /* FAVORITES */
+
+    .favorites-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+    }
+
+    .fav-card {
+      grid-column: span 2;
+      padding: 13px;
+      box-shadow: 0 8px 24px rgba(88,64,89,.07);
+      transition: transform .2s;
+      overflow: hidden;
+    }
+
+    .fav-card.wide {
+      grid-column: span 3;
+    }
+
+    .fav-img {
+      height: 215px;
+      border-radius: 17px;
+      overflow: hidden;
+      background: #fce9f0;
+      position: relative;
+    }
+
+    .fav-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s;
+    }
+
+    .fav-card:hover .fav-img img {
+      transform: scale(1.04);
+    }
+
+    .fav-img .emoji-cover {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      font-size: 4rem;
+      background: linear-gradient(135deg, #ffe1ed, #e1f5ff);
+    }
+
+    .fav-copy {
+      padding: 15px 7px 8px;
+    }
+
+    .fav-copy .tag {
+      font-size: .73rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 800;
+      color: #d9689b;
+    }
+
+    .fav-copy h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      margin: 4px 0 6px;
+    }
+
+    .fav-copy p {
+      font-size: .91rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .song-list {
+      margin: 12px 0 0;
+      padding-left: 19px;
+      font-size: .89rem;
+      color: #5e5664;
+    }
+
+    .song-list li {
+      padding: 3px 0;
+    }
+
+    .song-list span {
+      color: #8a7f8e;
+    }
+
+    /* ACHIEVEMENTS */
+
+    .achievements {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .achievement-card {
+      padding: 13px;
+      box-shadow: none;
+      transition: transform .2s;
+    }
+
+    .achievement-img {
+      height: 190px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff0f6;
+    }
+
+    .achievement-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .achievement-card h3 {
+      font-family: 'Playfair Display', serif;
+      margin: 14px 5px 4px;
+      font-size: 1.25rem;
+    }
+
+    .achievement-card p {
+      margin: 0 5px 7px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .year {
+      display: inline-block;
+      margin: 0 5px 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--yellow);
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-card {
+      box-shadow: none;
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin: 0 0 10px;
+    }
+
+    .contact-line {
+      padding: 12px 0;
+      border-bottom: 1px dashed #eadfe7;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-line:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-line small {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .contact-line a {
+      font-weight: 700;
+    }
+
+    .contact-line a:hover {
+      color: #e768a1;
+    }
+
+    .contact-doodle {
+      background: var(--sky);
+      border: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 240px;
+      transform: rotate(1deg);
+    }
+
+    .contact-doodle p {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .contact-doodle span {
+      font-size: 2rem;
+      margin-top: 15px;
+    }
+
+    footer {
+      padding: 26px 0;
+      text-align: center;
+      background: #fff4f8;
+      color: #6d6270;
+      font-size: .87rem;
+    }
+
+    footer strong {
+      color: #e768a1;
+    }
+
+    .backtop {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 800;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .links {
+        gap: 11px;
+        font-size: .8rem;
+      }
+
+      .hero-grid, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .hero-art {
+        min-height: 340px;
+      }
+
+      .skill-grid, .achievements {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .fav-card {
+        grid-column: span 3;
+      }
+
+      .fav-card.wide {
+        grid-column: span 3;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .nav {
+        padding: 13px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .links {
+        gap: 10px 15px;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero-art {
+        min-height: 315px;
+      }
+
+      .photo-frame {
+        height: 260px;
+      }
+
+      .skill-grid, .achievements, .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-card.wide {
+        grid-column: auto;
+      }
+
+      .fav-card, .fav-card.wide {
+        grid-column: span 6;
+      }
+
+      .fav-img {
+        height: 230px;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .about-note {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">afla<span>✿</span>aqila</a>
+
+    <nav class="links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">What I Can Do</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#achievement">Achievement</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+
+      <div>
+        <span class="eyebrow">✦ welcome to my little corner</span>
+
+        <h1>Hi, I'm <em>Afla</em>!<br>
+          A little bit of<br>
+          everything ✿
+        </h1>
+
+        <p>
+          Information Systems student, video-editing enjoyer,
+          and a person with a very specific list of favorite things.
+          This is my little space on the internet!
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="#about">Get to know me ↘</a>
+          <a class="btn secondary" href="#favorites">My current obsessions ♡</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <span class="spark" style="top:58px;right:50px">✦</span>
+        <span class="spark" style="bottom:76px;left:35px">✧</span>
+
+        <div class="photo-frame">
+          <img src="image/afla.jpg"
+               alt="Afla Aqila Hulwah Hendri"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+          <div class="photo-placeholder" style="display:none">🌷</div>
+        </div>
+
+        <div class="sticker one">hello, nice to meet u!</div>
+        <div class="sticker two">just being me ♡</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section id="about" class="tint-pink">
+    <div class="wrap">
+
+      <div class="section-head">
+        <span class="kicker">01 / a little intro</span>
+        <h2>Get to know me 🌷</h2>
+        <p>A small introduction about the person behind this page.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <article class="about-note">
+          <h3>Hi there! ♡</h3>
+          <p>
+            I'm Afla Aqila Hulwah Hendri, an Information Systems student
+            from Karawang, West Java. I'm still learning, exploring
+            new things, and figuring out what I enjoy along the way.
+            I also love video editing and making little things feel
+            a bit more special.
+          </p>
+        </article>
+
+        <div class="info-grid">
+
+          <div class="info-card">
+            <small>Full name</small>
+            <strong>Afla Aqila Hulwah Hendri</strong>
+          </div>
+
+          <div class="info-card">
+            <small>Student ID / NIM</small>
+            <strong>26051214200</strong>
+          </div>
+
+          <div class="info-card">
+            <small>Study program</small>
+            <strong>Sistem Informasi</strong>
+          </div>
+
+          <div class="info-card">
+            <small>Class</small>
+            <strong>2026D</strong>
+          </div>
+
+          <div class="info-card wide">
+            <small>From</small>
+            <strong>Karawang, West Java, Indonesia 📍</strong>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I CAN DO -->
+  <section id="skills">
+    <div class="wrap">
+
+      <div class="section-head">
+        <span class="kicker">02 / things I do</span>
+        <h2>What I can do ✨</h2>
+        <p>Things I enjoy doing and want to keep improving at.</p>
+      </div>
+
+      <div class="skill-grid">
+
+        <article class="skill-card">
+          <div class="skill-icon">🎬</div>
+          <h3>Video Editing</h3>
+          <p>
+            I enjoy putting clips, music, and little details together
+            to tell a story and create a certain vibe.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-icon">💻</div>
+          <h3>Learning Tech</h3>
+          <p>
+            As an Information Systems student, I'm exploring the
+            world of technology and learning new skills one step
+            at a time.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-icon">🧭</div>
+          <h3>Teamwork & Organization</h3>
+          <p>
+            My scouting experiences helped me learn about
+            responsibility, working with others, and being part
+            of a team.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MY FAVORITES -->
+  <section id="favorites" class="tint-blue">
+    <div class="wrap">
+
+      <div class="section-head">
+        <span class="kicker">03 / things that make me happy</span>
+        <h2>My Favorites 💌</h2>
+        <p>A few of the things that currently live rent-free in my head.</p>
+      </div>
+
+      <div class="favorites-grid">
+
+        <!-- CORTIS -->
+        <article class="fav-card">
+          <div class="fav-img">
+            <img src="image/cortis.jpg"
+                 alt="CORTIS"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+            <div class="emoji-cover" style="display:none">🎧</div>
+          </div>
+
+          <div class="fav-copy">
+            <span class="tag">music / group</span>
+            <h3>CORTIS</h3>
+            <p>
+              Currently into CORTIS. Their music and overall vibe
+              just hit different, and there's always something new
+              to love about them.
+            </p>
+          </div>
+        </article>
+
+        <!-- SEONGHYEON -->
+        <article class="fav-card">
+          <div class="fav-img">
+            <img src="image/seonghyeon.jpg"
+                 alt="Seonghyeon"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+            <div class="emoji-cover" style="display:none">🦊</div>
+          </div>
+
+          <div class="fav-copy">
+            <span class="tag">my favorite member</span>
+            <h3>Seonghyeon 🦊</h3>
+            <p>
+              My favorite in CORTIS. There's just something about
+              Seonghyeon that keeps him at the top of my list.
+              Definitely my kind of person to root for.
+            </p>
+          </div>
+        </article>
+
+        <!-- OSCAR PIASTRI -->
+        <article class="fav-card">
+          <div class="fav-img">
+            <img src="image/oscar.jpg"
+                 alt="Oscar Piastri"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+            <div class="emoji-cover" style="display:none">🏎️</div>
+          </div>
+
+          <div class="fav-copy">
+            <span class="tag">formula 1</span>
+            <h3>Oscar Piastri</h3>
+            <p>
+              A little F1 appreciation because watching Oscar race
+              is one of my favorite things.
+            </p>
+          </div>
+        </article>
+
+        <!-- FAV FOOD -->
+        <article class="fav-card wide">
+          <div class="fav-img">
+            <img src="image/fav food.jpg"
+                 alt="Favorite foods"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+            <div class="emoji-cover" style="display:none">🥐🍪🍦</div>
+          </div>
+
+          <div class="fav-copy">
+            <span class="tag">little treats</span>
+            <h3>Fav Food 🍪</h3>
+            <p>
+              Dubai chewy cookies, salt bread, and Sour Sally.
+              A tiny treat can make a day better.
+            </p>
+          </div>
+        </article>
+
+        <!-- FAV SONG -->
+        <article class="fav-card wide">
+          <div class="fav-img">
+            <img src="image/song.jpg"
+                 alt="Favorite songs"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+            <div class="emoji-cover" style="display:none">🎶💿</div>
+          </div>
+
+          <div class="fav-copy">
+            <span class="tag">on repeat lately</span>
+            <h3>Fav Song 🎧</h3>
+
+            <ol class="song-list">
+              <li><strong>E85</strong> <span>— Don Toliver</span></li>
+              <li><strong>Wonderwall</strong> <span>— Oasis</span></li>
+              <li><strong>JOYRiDE</strong> <span>— CORTIS</span></li>
+              <li><strong>Circles</strong> <span>— SEVENTEEN</span></li>
+              <li><strong>Nobody Gets Me</strong> <span>— SZA</span></li>
+              <li><strong>TBH</strong> <span>— PARTYNEXTDOOR</span></li>
+              <li><strong>FLATLINE</strong> <span>— Justin Bieber</span></li>
+              <li><strong>Batshit</strong> <span>— Dominic Fike</span></li>
+              <li><strong>Anaheim</strong> <span>— NIKI</span></li>
+            </ol>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENT & EXPERIENCE -->
+  <section id="achievement" class="tint-yellow">
+    <div class="wrap">
+
+      <div class="section-head">
+        <span class="kicker">04 / things I've been part of</span>
+        <h2>Achievement & Experience 🏅</h2>
+        <p>Some meaningful parts of my journey in scouting.</p>
+      </div>
+
+      <div class="achievements">
+
+        <article class="achievement-card">
+          <div class="achievement-img">
+            <img src="image/garuda.jpg"
+                 alt="Pramuka Garuda"
+                 onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#ffe2ed,#fff8c8)'">
+          </div>
+
+          <span class="year">2025</span>
+          <h3>Pramuka Garuda</h3>
+          <p>A meaningful milestone in my scouting journey.</p>
+        </article>
+
+        <article class="achievement-card">
+          <div class="achievement-img">
+            <img src="image/DA.jpg"
+                 alt="Dewan Ambalan"
+                 onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#d9f2ff,#fff1f7)'">
+          </div>
+
+          <span class="year">2025–2026</span>
+          <h3>Anggota Sie. Binlat Dewan Ambalan</h3>
+          <p>Being part of the training and development section of Dewan Ambalan.</p>
+        </article>
+
+        <article class="achievement-card">
+          <div class="achievement-img">
+            <img src="image/DP.jpg"
+                 alt="Dewan Penggalang"
+                 onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#fff8c8,#ffddeb)'">
+          </div>
+
+          <span class="year">2021–2022</span>
+          <h3>Anggota Dewan Penggalang</h3>
+          <p>One of my early experiences in scouting and teamwork.</p>
+        </article>
+
+        <article class="achievement-card">
+          <div class="achievement-img">
+            <img src="image/sakpar.jpg"
+                 alt="Saka Pariwisata Kuningan"
+                 onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#d9f2ff,#fff1f7)'">
+          </div>
+
+          <span class="year">2025</span>
+          <h3>Anggota Saka Pariwisata Kuningan</h3>
+          <p>An experience that became part of my scouting story.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="tint-pink">
+    <div class="wrap">
+
+      <div class="section-head">
+        <span class="kicker">05 / say hello</span>
+        <h2>Let's keep in touch 💌</h2>
+        <p>Here are the best ways to reach me.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Find me here</h3>
+
+          <div class="contact-line">
+            <small>Personal email</small>
+            <a href="mailto:aflaaqila2008@gmail.com">
+              aflaaqila2008@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-line">
+            <small>Student email</small>
+            <a href="mailto:26051214200@mhs.unesa.ac.id">
+              26051214200@mhs.unesa.ac.id
+            </a>
+          </div>
+
+          <div class="contact-line">
+            <small>Study program</small>
+            <strong>Sistem Informasi · 2026D</strong>
+          </div>
+        </div>
+
+        <div class="contact-card contact-doodle">
+          <p>Thanks for stopping by my little corner of the internet!</p>
+          <span>♡ ✿ ✧</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    made with <strong>♡</strong> caffeine & an unhealthy amount of Eom Seonghyeon
+    <div>
+      <a class="backtop" href="#home">back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
